@@ -24,13 +24,7 @@ complex_numbers &complex_numbers::operator=(const complex_numbers& other) {
     imag = other.imag;
     return *this;
 }
-/*
-complex_numbers &complex_numbers::operator=(rational_numbers number) {
-    real = number;
-    imag = 0;
-    return *this;
-}
-*/
+
 complex_numbers complex_numbers::operator+(const complex_numbers& other) const {
     rational_numbers new_real = this->real + other.real;
     rational_numbers new_imag = this->imag + other.imag;
@@ -128,40 +122,3 @@ void complex_numbers::set_real(double real_num) {
 void complex_numbers::set_imag(double imag_part) {
     this->imag = imag;
 }
-/*
-complex_numbers complex_numbers::operator+(rational_numbers num) {
-    return complex_numbers(real + num, imag);
-}
-
-complex_numbers &complex_numbers::operator+=(rational_numbers num) {
-    *this = *this + num;
-    return *this;
-}
-
-complex_numbers complex_numbers::operator-(rational_numbers num) {
-    return complex_numbers(real - num, imag);
-}
-
-complex_numbers &complex_numbers::operator-=(rational_numbers num) {
-    *this = *this - num;
-    return *this;
-}
-
-complex_numbers complex_numbers::operator*(rational_numbers num) {
-    return complex_numbers(real * num, imag * num);
-}
-
-complex_numbers &complex_numbers::operator*=(rational_numbers num) {
-    *this = *this * num;
-    return *this;
-}
-
-complex_numbers complex_numbers::operator/(rational_numbers num) {
-    return complex_numbers(real / num, imag / num);
-}
-
-complex_numbers &complex_numbers::operator/=(rational_numbers num) {
-    *this = *this * num;
-    return *this;
-}
-*/
