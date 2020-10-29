@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string.h>
 #include <sstream>
+#include <exception>
 using namespace std;
 
 class rational_numbers {

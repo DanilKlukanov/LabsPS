@@ -7,14 +7,14 @@ rational_numbers::rational_numbers(int64_t num, int64_t den) {
     this->numerator = num;
     this->denominator = den;
     if (this->denominator == 0) {
-        cout << "Warning, do not enter zero in the denominator." << endl;
-        numerator = num;
-        denominator = 1;
+        this->numerator = 0;
+        this->denominator = 1;
     }
     else if (this->denominator < 0) {
         this->numerator = -num;
         this->denominator = -den;
     }
+    reducation();
 }
 
 rational_numbers::rational_numbers(double value) {

@@ -13,7 +13,7 @@
 #include "Complex.h"
 #include "pch.h"
 
-<span style = "background-color:#dfd">complex_numbers::complex_numbers(rational_numbers real, rational_numbers imag) {
+<span style = "background-color:#dfd">complex_numbers::complex_numbers(const rational_numbers&amp; real, const rational_numbers&amp; imag) {
     this-&gt;real = real;
     this-&gt;imag = imag;
 }</span>
@@ -29,23 +29,13 @@
 <span style = "background-color:#dfd">rational_numbers complex_numbers::get_imag() {
     return imag;
 }</span>
-/*
-string complex_numbers::get_all() {
-    return get_real().get_ratioanl_number() + " + " + get_imag().get_ratioanl_number() + "i";
-}
-*/
+
 <span style = "background-color:#dfd">complex_numbers &amp;complex_numbers::operator=(const complex_numbers&amp; other) {
     real = other.real;
     imag = other.imag;
     return *this;
 }</span>
-/*
-complex_numbers &amp;complex_numbers::operator=(rational_numbers number) {
-    real = number;
-    imag = 0;
-    return *this;
-}
-*/
+
 <span style = "background-color:#dfd">complex_numbers complex_numbers::operator+(const complex_numbers&amp; other) const {
     rational_numbers new_real = this-&gt;real + other.real;
     rational_numbers new_imag = this-&gt;imag + other.imag;
@@ -142,43 +132,6 @@ complex_numbers &amp;complex_numbers::operator=(rational_numbers number) {
 
 <span style = "background-color:#dfd">void complex_numbers::set_imag(double imag_part) {
     this-&gt;imag = imag;
-}</span>
-/*
-complex_numbers complex_numbers::operator+(rational_numbers num) {
-    return complex_numbers(real + num, imag);
-}
-
-complex_numbers &amp;complex_numbers::operator+=(rational_numbers num) {
-    *this = *this + num;
-    return *this;
-}
-
-complex_numbers complex_numbers::operator-(rational_numbers num) {
-    return complex_numbers(real - num, imag);
-}
-
-complex_numbers &amp;complex_numbers::operator-=(rational_numbers num) {
-    *this = *this - num;
-    return *this;
-}
-
-complex_numbers complex_numbers::operator*(rational_numbers num) {
-    return complex_numbers(real * num, imag * num);
-}
-
-complex_numbers &amp;complex_numbers::operator*=(rational_numbers num) {
-    *this = *this * num;
-    return *this;
-}
-
-complex_numbers complex_numbers::operator/(rational_numbers num) {
-    return complex_numbers(real / num, imag / num);
-}
-
-complex_numbers &amp;complex_numbers::operator/=(rational_numbers num) {
-    *this = *this * num;
-    return *this;
-}
-*/</pre>
+}</span></pre>
 	</body>
 </html>

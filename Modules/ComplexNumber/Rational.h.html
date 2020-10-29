@@ -14,6 +14,7 @@
 #include &lt;iostream&gt;
 #include &lt;string.h&gt;
 #include &lt;sstream&gt;
+#include &lt;exception&gt;
 using namespace std;
 
 class rational_numbers {
@@ -31,10 +32,6 @@ public:
 
     int64_t great_common_den(int64_t num, int64_t den) const;
 
-    int64_t get_denominator();
-
-    int64_t get_numerator();
-
     string get_ratioanl_number();
 
     rational_numbers&amp; operator=(const rational_numbers&amp; other);
@@ -47,27 +44,15 @@ public:
 
     rational_numbers operator/(const rational_numbers&amp; other) const;
 
-    rational_numbers&amp; operator+=(const rational_numbers&amp; other);
-
-    rational_numbers&amp; operator*=(const rational_numbers&amp; other);
-
-    rational_numbers&amp; operator-=(const rational_numbers&amp; other);
-
-    rational_numbers&amp; operator/=(const rational_numbers&amp; other);
-
     rational_numbers operator-() const;
 
     bool operator&lt;(const rational_numbers&amp; other) const;
 
     bool operator&gt;(const rational_numbers&amp; other) const;
 
-    bool operator&lt;=(const rational_numbers&amp; other) const;
-
     bool operator&gt;=(const rational_numbers&amp; other) const;
 
     bool operator==(const rational_numbers&amp; other) const;
-
-    bool operator!=(const rational_numbers&amp; other) const;
 
     friend ostream&amp; operator&lt;&lt;(ostream&amp; out, const rational_numbers&amp; rat);
 

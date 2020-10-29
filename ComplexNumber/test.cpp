@@ -128,7 +128,7 @@ TEST(UnitTest_plus, plus_E)
 	complex_numbers b(7, 4.53);
 	b += a;
 	string number_one = "18001/2000";
-	string number_two = "653900/100000";
+	string number_two = "6539/1000";
 	ASSERT_EQ(b.get_real().GetDec(), number_one);
 	ASSERT_EQ(b.get_imag().GetDec(), number_two);
 }
@@ -167,8 +167,8 @@ TEST(UnitTest_plus, plus_I)
 	complex_numbers a(-1.09, 100.546);
 	complex_numbers b(89.33, -56.99);
 	b += a + 108.104;
-	string number_one = "245430000/1250000";
-	string number_two = "2177800/50000";
+	string number_one = "24543/125";
+	string number_two = "10889/250";
 	ASSERT_EQ(b.get_real().GetDec(), number_one);
 	ASSERT_EQ(b.get_imag().GetDec(), number_two);
 }
@@ -199,7 +199,7 @@ TEST(UnitTest_mul, mul_B)
 	complex_numbers a(0.65, -1);
 	complex_numbers b(0, 6.2);
 	complex_numbers c = a * b;
-	string number_one = "620/100";
+	string number_one = "31/5";
 	string number_two = "403/100";
 	ASSERT_EQ(c.get_real().GetDec(), number_one);
 	ASSERT_EQ(c.get_imag().GetDec(), number_two);
@@ -209,7 +209,7 @@ TEST(UnitTest_mul, mul_C)
 	complex_numbers a(0.5, 3);
 	complex_numbers b(25, 7.9);
 	complex_numbers c = a * b * 7;
-	string number_one = "-1568/20";
+	string number_one = "-392/5";
 	string number_two = "11053/20";
 	ASSERT_EQ(c.get_real().GetDec(), number_one);
 	ASSERT_EQ(c.get_imag().GetDec(), number_two);
@@ -219,7 +219,7 @@ TEST(UnitTest_mul, mul_D)
 	complex_numbers a(4.1234, 4);
 	complex_numbers c(20, 6.6789);
 	c *= a;
-	string number_one = "2787620000/50000000";
+	string number_one = "139381/2500";
 	string number_two = "5376988813/50000000";
 	ASSERT_EQ(c.get_real().GetDec(), number_one);
 	ASSERT_EQ(c.get_imag().GetDec(), number_two);
@@ -229,8 +229,8 @@ TEST(UnitTest_mul, mul_E)
 	complex_numbers a(0, 0);
 	complex_numbers c(7, 2.789);
 	c *= a;
-	string number_one = "0/1000";
-	string number_two = "0/1000";
+	string number_one = "0/1";
+	string number_two = "0/1";
 	ASSERT_EQ(c.get_real().GetDec(), number_one);
 	ASSERT_EQ(c.get_imag().GetDec(), number_two);
 }
@@ -241,8 +241,8 @@ TEST(UnitTest_mul, mul_F)
 	complex_numbers c(21, 10.6);
 	complex_numbers d;
 	d = a * b * c;
-	string number_one = "-10682719075400/200000";
-	string number_two = "21129157832200/200000";
+	string number_one = "-53413595377/1000";
+	string number_two = "105645789161/1000";
 	ASSERT_EQ(d.get_real().GetDec(), number_one);
 	ASSERT_EQ(d.get_imag().GetDec(), number_two);
 }
@@ -261,8 +261,8 @@ TEST(UnitTest_mul, mul_H)
 	complex_numbers a(2, 10);
 	complex_numbers b(-6, -55);
 	b *= a * 0.5;
-	string number_one = "538/2";
-	string number_two = "-170/2";
+	string number_one = "269/1";
+	string number_two = "-85/1";
 	ASSERT_EQ(b.get_real().GetDec(), number_one);
 	ASSERT_EQ(b.get_imag().GetDec(), number_two);
 }
@@ -271,8 +271,8 @@ TEST(UnitTest_mul, mul_I)
 	complex_numbers a(-0.7, 53.8);
 	complex_numbers b(7.6, -20.01);
 	b *= a * 2.99;
-	string number_one = "40036772750000/12500000000";
-	string number_two = "15805401625000/12500000000";
+	string number_one = "160147091/50000";
+	string number_two = "126443213/100000";
 	ASSERT_EQ(b.get_real().GetDec(), number_one);
 	ASSERT_EQ(b.get_imag().GetDec(), number_two);
 }
@@ -280,8 +280,8 @@ TEST(UnitTest_mul, mul_J)
 {
 	complex_numbers b(90, -8.35);
 	b *= 98;
-	string number_one = "176400/20";
-	string number_two = "-16366/20";
+	string number_one = "8820/1";
+	string number_two = "-8183/10";
 	ASSERT_EQ(b.get_real().GetDec(), number_one);
 	ASSERT_EQ(b.get_imag().GetDec(), number_two);
 }
@@ -345,12 +345,23 @@ TEST(UnitTest_minus, min_F)
 	complex_numbers c(68.5, 100);
 	complex_numbers d;
 	d = a - b - c;
-	string number_one = "-136/20";
+	string number_one = "-34/5";
 	string number_two = "-519/10";
 	ASSERT_EQ(d.get_real().GetDec(), number_one);
 	ASSERT_EQ(d.get_imag().GetDec(), number_two);
 }
-
+TEST(UnitTest_rational, ran_A)
+{
+	rational_numbers a(88, -1);
+	string number = "-88/1";
+	ASSERT_EQ(a.get_ratioanl_number(), number);
+}
+TEST(UnitTest_rational, ran_B)
+{
+	rational_numbers a(9, 0);
+	string number = "0/1";
+	ASSERT_EQ(a.get_ratioanl_number(), number);
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 TEST(UnitTest_unary_minus, una_A)
@@ -389,8 +400,8 @@ TEST(UnitTest_det, det_B)
 	complex_numbers a(74, -6.82);
 	complex_numbers b(81, 7.6);
 	complex_numbers c = a / b;
-	string number_one = "37138550/41367250";
-	string number_two = "-6967625/41367250";
+	string number_one = "742771/827345";
+	string number_two = "-55741/330938";
 	ASSERT_EQ(c.get_real().GetDec(), number_one);
 	ASSERT_EQ(c.get_imag().GetDec(), number_two);
 }
@@ -399,8 +410,8 @@ TEST(UnitTest_det, det_C)
 	complex_numbers a(7, 78);
 	complex_numbers b(34, 5);
 	complex_numbers c = a / b / 80;
-	string number_one = "50240/7558400";
-	string number_two = "209360/7558400";
+	string number_one = "157/23620";
+	string number_two = "2617/94480";
 	ASSERT_EQ(c.get_real().GetDec(), number_one);
 	ASSERT_EQ(c.get_imag().GetDec(), number_two);
 }
@@ -409,8 +420,8 @@ TEST(UnitTest_det, det_D)
 	complex_numbers a(6.5, 9.6);
 	complex_numbers c(20.8, 5);
 	c /= a;
-	string number_one = "916000/672050";
-	string number_two = "-835900/672050";
+	string number_one = "18320/13441";
+	string number_two = "-16718/13441";
 	ASSERT_EQ(c.get_real().GetDec(), number_one);
 	ASSERT_EQ(c.get_imag().GetDec(), number_two);
 }
@@ -421,29 +432,8 @@ TEST(UnitTest_det, det_E)
 	complex_numbers c(78.4, 50);
 	complex_numbers d;
 	d = a / b / c;
-	string number_one = "-6466099126909560192/6506794624772273152";
-	string number_two = "3377959885584736256/6506794624772273152";
-	ASSERT_EQ(d.get_real().GetDec(), number_one);
-	ASSERT_EQ(d.get_imag().GetDec(), number_two);
-}
-TEST(UnitTest_det, det_F)
-{
-	complex_numbers a(2.008, 23);
-	complex_numbers c(0, 0);
-	complex_numbers d;
-	d = a / c;
-	string number_one = "0/1";
-	string number_two = "0/1";
-	ASSERT_EQ(d.get_real().GetDec(), number_one);
-	ASSERT_EQ(d.get_imag().GetDec(), number_two);
-}
-TEST(UnitTest_det, det_G)
-{
-	complex_numbers a(2.008, 23);
-	complex_numbers d;
-	d = a / 0;
-	string number_one = "0/1";
-	string number_two = "0/1";
+	string number_one = "630026785/351223699528";
+	string number_two = "458907784/219514812205";
 	ASSERT_EQ(d.get_real().GetDec(), number_one);
 	ASSERT_EQ(d.get_imag().GetDec(), number_two);
 }
@@ -513,8 +503,8 @@ TEST(UnitTest_pow, pow_A)
 {
 	complex_numbers a(0.56, 1.1234);
 	complex_numbers c = a.Pow();
-	string number_one = "-14819180625/15625000000";
-	string number_two = "157276/125000";
+	string number_one = "-23710689/25000000";
+	string number_two = "39319/31250";
 	ASSERT_EQ(c.get_real().GetDec(), number_one);
 	ASSERT_EQ(c.get_imag().GetDec(), number_two);
 }
@@ -540,8 +530,8 @@ TEST(UnitTest_pow, pow_D)
 {
 	complex_numbers a(1.34, 5.5);
 	complex_numbers c = a.Pow(3);
-	string number_one = "-11919889600/100000000";
-	string number_two = "-13674760000/100000000";
+	string number_one = "-7449931/62500";
+	string number_two = "-341869/2500";
 	ASSERT_EQ(c.get_real().GetDec(), number_one);
 	ASSERT_EQ(c.get_imag().GetDec(), number_two);
 }
@@ -618,3 +608,4 @@ TEST(UnitTest_out, out_A) {
 
 	fout << c << endl;
 }
+

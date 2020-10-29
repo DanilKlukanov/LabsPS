@@ -18,15 +18,15 @@
     this-&gt;numerator = num;
     this-&gt;denominator = den;
     if (this-&gt;denominator == 0) {
-        cout &lt;&lt; "Warning, do not enter zero in the denominator." &lt;&lt; endl;
-        numerator = num;
-        denominator = 1;
+        this-&gt;numerator = 0;
+        this-&gt;denominator = 1;
     }
     else if (this-&gt;denominator &lt; 0) {
         this-&gt;numerator = -num;
         this-&gt;denominator = -den;</span>
     }
-<span style = "background-color:#dfd">}</span>
+<span style = "background-color:#dfd">    reducation();
+}</span>
 
 <span style = "background-color:#dfd">rational_numbers::rational_numbers(double value) {
     double copy_value = value;</span>
@@ -64,15 +64,7 @@
     }
     return den;
 }</span>
-/*
-int64_t rational_numbers::get_denominator() {
-    return denominator;
-}
 
-int64_t rational_numbers::get_numerator() {
-    return numerator;
-}
-*/
 <span style = "background-color:#dfd">string rational_numbers::get_ratioanl_number() {
     return to_string(numerator) + '/' + to_string(denominator);
 }</span>
@@ -104,27 +96,7 @@ int64_t rational_numbers::get_numerator() {
 <span style = "background-color:#dfd">rational_numbers rational_numbers::operator/(const rational_numbers&amp; other) const {
     return rational_numbers(this-&gt;numerator * other.denominator, this-&gt;denominator * other.numerator);
 }</span>
-/*
-rational_numbers&amp; rational_numbers::operator+=(const rational_numbers&amp; other) {
-    *this = *this + other;
-    return *this;
-}
 
-rational_numbers&amp; rational_numbers::operator*=(const rational_numbers&amp; other) {
-    *this = *this * other;
-    return *this;
-}
-
-rational_numbers&amp; rational_numbers::operator-=(const rational_numbers&amp; other) {
-    *this = *this - other;
-    return *this;
-}
-
-rational_numbers&amp; rational_numbers::operator/=(const rational_numbers&amp; other) {
-    *this = *this / other;
-    return *this;
-}
-*/
 <span style = "background-color:#dfd">rational_numbers rational_numbers::operator-() const {
     return rational_numbers(-this-&gt;numerator, this-&gt;denominator);
 }</span>
@@ -136,11 +108,7 @@ rational_numbers&amp; rational_numbers::operator/=(const rational_numbers&amp; o
 <span style = "background-color:#dfd">bool rational_numbers::operator&gt;(const rational_numbers&amp; other) const {
     return (this-&gt;numerator * other.denominator &gt; this-&gt;denominator * other.numerator);
 }</span>
-/*
-bool rational_numbers::operator&lt;=(const rational_numbers&amp; other) const {
-    return (this-&gt;numerator * other.denominator &lt;= this-&gt;denominator * other.numerator);
-}
-*/
+
 <span style = "background-color:#dfd">bool rational_numbers::operator&gt;=(const rational_numbers&amp; other) const {
     return (this-&gt;numerator * other.denominator &gt;= this-&gt;denominator * other.numerator);
 }</span>
@@ -148,11 +116,7 @@ bool rational_numbers::operator&lt;=(const rational_numbers&amp; other) const {
 <span style = "background-color:#dfd">bool rational_numbers::operator==(const rational_numbers&amp; other) const {
     return (this-&gt;numerator == other.numerator &amp;&amp; this-&gt;denominator == other.denominator);
 }</span>
-/*
-bool rational_numbers::operator!=(const rational_numbers&amp; other) const {
-    return !(this-&gt;numerator == other.numerator &amp;&amp; this-&gt;denominator == other.denominator);
-}
-*/
+
 <span style = "background-color:#dfd">ostream&amp; operator&lt;&lt;(ostream&amp; out, const rational_numbers&amp; rat) {
     return out &lt;&lt; rat.numerator &lt;&lt; "/" &lt;&lt; rat.denominator;
 }</span>
