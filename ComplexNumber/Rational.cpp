@@ -53,15 +53,7 @@ int64_t rational_numbers::great_common_den(int64_t num, int64_t den) const {
     }
     return den;
 }
-/*
-int64_t rational_numbers::get_denominator() {
-    return denominator;
-}
 
-int64_t rational_numbers::get_numerator() {
-    return numerator;
-}
-*/
 string rational_numbers::get_ratioanl_number() {
     return to_string(numerator) + '/' + to_string(denominator);
 }
@@ -93,27 +85,7 @@ rational_numbers rational_numbers::operator-(const rational_numbers& other) cons
 rational_numbers rational_numbers::operator/(const rational_numbers& other) const {
     return rational_numbers(this->numerator * other.denominator, this->denominator * other.numerator);
 }
-/*
-rational_numbers& rational_numbers::operator+=(const rational_numbers& other) {
-    *this = *this + other;
-    return *this;
-}
 
-rational_numbers& rational_numbers::operator*=(const rational_numbers& other) {
-    *this = *this * other;
-    return *this;
-}
-
-rational_numbers& rational_numbers::operator-=(const rational_numbers& other) {
-    *this = *this - other;
-    return *this;
-}
-
-rational_numbers& rational_numbers::operator/=(const rational_numbers& other) {
-    *this = *this / other;
-    return *this;
-}
-*/
 rational_numbers rational_numbers::operator-() const {
     return rational_numbers(-this->numerator, this->denominator);
 }
@@ -125,11 +97,7 @@ bool rational_numbers::operator<(const rational_numbers& other) const {
 bool rational_numbers::operator>(const rational_numbers& other) const {
     return (this->numerator * other.denominator > this->denominator * other.numerator);
 }
-/*
-bool rational_numbers::operator<=(const rational_numbers& other) const {
-    return (this->numerator * other.denominator <= this->denominator * other.numerator);
-}
-*/
+
 bool rational_numbers::operator>=(const rational_numbers& other) const {
     return (this->numerator * other.denominator >= this->denominator * other.numerator);
 }
@@ -137,11 +105,7 @@ bool rational_numbers::operator>=(const rational_numbers& other) const {
 bool rational_numbers::operator==(const rational_numbers& other) const {
     return (this->numerator == other.numerator && this->denominator == other.denominator);
 }
-/*
-bool rational_numbers::operator!=(const rational_numbers& other) const {
-    return !(this->numerator == other.numerator && this->denominator == other.denominator);
-}
-*/
+
 ostream& operator<<(ostream& out, const rational_numbers& rat) {
     return out << rat.numerator << "/" << rat.denominator;
 }

@@ -20,10 +20,6 @@ public:
 
     int64_t great_common_den(int64_t num, int64_t den) const;
 
-    int64_t get_denominator();
-
-    int64_t get_numerator();
-
     string get_ratioanl_number();
 
     rational_numbers& operator=(const rational_numbers& other);
@@ -36,27 +32,15 @@ public:
 
     rational_numbers operator/(const rational_numbers& other) const;
 
-    rational_numbers& operator+=(const rational_numbers& other);
-
-    rational_numbers& operator*=(const rational_numbers& other);
-
-    rational_numbers& operator-=(const rational_numbers& other);
-
-    rational_numbers& operator/=(const rational_numbers& other);
-
     rational_numbers operator-() const;
 
     bool operator<(const rational_numbers& other) const;
 
     bool operator>(const rational_numbers& other) const;
 
-    bool operator<=(const rational_numbers& other) const;
-
     bool operator>=(const rational_numbers& other) const;
 
     bool operator==(const rational_numbers& other) const;
-
-    bool operator!=(const rational_numbers& other) const;
 
     friend ostream& operator<<(ostream& out, const rational_numbers& rat);
 

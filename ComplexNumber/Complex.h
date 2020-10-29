@@ -23,11 +23,7 @@ public:
 
     rational_numbers get_imag();
 
-    string get_all();
-
     complex_numbers& operator=(const complex_numbers& other);
-
-    //complex_numbers& operator=(rational_numbers number);
 
     complex_numbers operator+(const complex_numbers& other) const;
 
@@ -62,21 +58,4 @@ public:
     void set_real(double real_num);
 
     void set_imag(double imag_part);
-    /*
-    complex_numbers operator+(rational_numbers num);
-
-    complex_numbers& operator+=(rational_numbers num);
-
-    complex_numbers operator-(rational_numbers num);
-
-    complex_numbers& operator-=(rational_numbers num);
-
-    complex_numbers operator*(rational_numbers num);
-
-    complex_numbers& operator*=(rational_numbers num);
-
-    complex_numbers operator/(rational_numbers num);
-
-    complex_numbers& operator/=(rational_numbers num);
-    */
 };
