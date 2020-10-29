@@ -18,11 +18,7 @@ rational_numbers complex_numbers::get_real() {
 rational_numbers complex_numbers::get_imag() {
     return imag;
 }
-/*
-string complex_numbers::get_all() {
-    return get_real().get_ratioanl_number() + " + " + get_imag().get_ratioanl_number() + "i";
-}
-*/
+
 complex_numbers &complex_numbers::operator=(const complex_numbers& other) {
     real = other.real;
     imag = other.imag;
